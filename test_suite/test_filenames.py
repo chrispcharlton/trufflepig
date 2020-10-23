@@ -16,7 +16,7 @@ def testing_directory(tmpdir):
     subdir_fys.mkdir('FY22').join('LameTextFile20200801.csv').write('CONTENT')
     subdir_fys.mkdir('F25').join('LameTextFile20200801.csv').write('CONTENT')
 
-    # Writing subdirectories organized by date
+    #Writing subdirectories organized by date
     subdir_fys = tmpdir.mkdir('datemonth_subdir')
     subdirs_fys_a = subdir_fys.mkdir('Aug 21')
     subdirs_fys_a.join('LameTextFile20200831.csv').write('CONTENT')
