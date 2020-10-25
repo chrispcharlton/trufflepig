@@ -36,7 +36,7 @@ def tree_builder(path, path_list):
             new_dir_path = path.mkdir(item["name"])
             if "children" in item.keys() and isinstance(item["children"], list):
                 subdir = new_dir_path
-                recursive_tree_builder(subdir, item["children"])
+                tree_builder(subdir, item["children"])
 
 @pytest.fixture()
 def testing_directory(tmpdir):
