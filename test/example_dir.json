@@ -1,0 +1,22 @@
+{
+  "contents": [
+    {
+      "type": "directory",
+      "name": "subdir",
+      "contents": [
+        {
+          "type": "file",
+          "name": "letterofresignation_2020_10_04.docx"
+        },
+        {
+          "type": "file",
+          "name": "letterofresignation_2020_10_31.docx"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "README.txt"
+    }
+  ]
+}
