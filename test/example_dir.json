@@ -2,15 +2,15 @@
   "contents": [
     {
       "type": "directory",
-      "name": "subdir",
+      "name": "truffles",
       "contents": [
         {
           "type": "file",
-          "name": "letterofresignation_2020_10_04.docx"
+          "name": "trufflecount.txt"
         },
         {
           "type": "file",
-          "name": "letterofresignation_2020_10_31.docx"
+          "name": "trufflepic.png"
         }
       ]
     },
