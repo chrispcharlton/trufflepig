@@ -31,4 +31,4 @@ def extract_date_from_str(patterns_list, string):
                 return parse(match)
             except:
                 print(f"String {match} was not recognised as date. Check date patterns")
-                return False
+                return None
