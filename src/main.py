@@ -21,6 +21,3 @@ def search(dir, regex=None, ext=None):
         else:
             return bool(re.match(regex, file.name))
     return [file for file in walk_files(dir) if matches_ext(file, ext) and matches_regex(file, regex)]
-
-
-
