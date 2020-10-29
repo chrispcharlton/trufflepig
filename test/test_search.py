@@ -1,5 +1,7 @@
 import os
-print(os.getcwd())
+import time
+import pytest
+
 from src.main import search
 
 
@@ -38,3 +40,10 @@ class TestSearch():
     def test_search_subdir(self, testing_directory):
         """Test that searching a subdirectory works as expected."""
         assert [f.name for f in search(os.path.join(testing_directory, 'truffles'), ext='.txt')] == ['trufflecount.txt']
+
+    @pytest.mark.parametrize('sort', ['mtime', 'ctime', 'atime', 'name', 'ext', 'size'])
+    def test_sort_mtime(self, testing_directory, sort):
+        time.sleep(0.1)
+        testing_directory.join('znewfile.z').write('there are many truffles here')
+        assert search(testing_directory, sort=sort)[0].name == 'znewfile.z'
+        assert search(testing_directory, sort=sort, descending=False)[-1].name == 'znewfile.z'
