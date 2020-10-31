@@ -3,7 +3,7 @@ import json
 
 @pytest.fixture()
 def dir_list():
-    return json.loads(open('test/example_dir.json', 'r').read())
+    return json.loads(open('example_dir.json', 'r').read())
 
 def load_dir_list(file):
     return json.loads(open(file, 'r').read())
