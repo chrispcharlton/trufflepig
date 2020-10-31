@@ -1,5 +1,5 @@
-import src.main as tp
 import src
+import src.main
 
 if __name__ == '__main__':
     # Task: find the latest plan in a directory
@@ -11,3 +11,4 @@ if __name__ == '__main__':
     latest_plan=plans[0]
     print(latest_plan)
     #plan is not the latest plan
+
