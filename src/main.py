@@ -3,7 +3,7 @@ import pathlib
 import re
 from typing import List,Union
 
-def walk_files(target, topdown=False):
+def walk_files(target, topdown:bool=False):
     """Returns Path objects of all files in a directory and it's subdirectories."""
     for root, _, files in os.walk(target, topdown=topdown):
        for name in files:
