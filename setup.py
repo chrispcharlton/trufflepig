@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="trufflepig",
-    version="0.1",
+    version="0.11",
     author="Chris Charlton, Hector Cubillos",
     author_email="chrispcharlton@gmail.com",
     description="A python package for rooting around your filesystem",
