@@ -1,12 +1,19 @@
 import pytest
 import json
 
+
 @pytest.fixture()
 def dir_list():
-    return json.loads(open('test/example_dir.json', 'r').read())
+    return {'contents': [{'type': 'directory',
+                          'name': 'truffles',
+                          'contents': [{'type': 'file', 'name': 'trufflecount.txt'},
+                                       {'type': 'file', 'name': 'trufflepic.png'}]},
+                         {'type': 'file', 'name': 'README.txt'}]}
+
 
 def load_dir_list(file):
     return json.loads(open(file, 'r').read())
+
 
 def tree_builder(path, path_list):
     for item in path_list:
@@ -17,6 +24,7 @@ def tree_builder(path, path_list):
             if "contents" in item.keys() and isinstance(item["contents"], list):
                 subdir = new_dir_path
                 tree_builder(subdir, item["contents"])
+
 
 @pytest.fixture()
 def testing_directory(tmpdir, dir_list):
