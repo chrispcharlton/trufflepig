@@ -1,5 +1,6 @@
 import re
 from dateutil.parser import parse
+from typing import List
 
 delimiter = "(\.| |-||/)"
 patterns_list = [#14-digit delimited sequence in the following order (4-2-2 2:2:2.6)
@@ -14,7 +15,7 @@ patterns_list = [#14-digit delimited sequence in the following order (4-2-2 2:2:
                  "\d{2}"+delimiter+"\d{2}"+delimiter+"\d{4}",
                  ]
 
-def extract_date_from_str(patterns_list, string):
+def extract_date_from_str(patterns_list:List[str], string:str):
     """
     This function extracts a date from a string using a list of regex patterns
     For the patterns extracted from string look at the patterns_list variable

@@ -1,14 +1,15 @@
 import os
 import pathlib
 import re
+from typing import List,Union
 
-def walk_files(target, topdown=False):
+def walk_files(target, topdown:bool=False):
     """Returns Path objects of all files in a directory and it's subdirectories."""
     for root, _, files in os.walk(target, topdown=topdown):
        for name in files:
             yield pathlib.Path(os.path.sep.join([root, name]))
 
-def sort_paths(paths, sort, descending):
+def sort_paths(paths:List[pathlib.Path], sort:str, descending:bool):
     """Sort a list of file paths by a range of criteria.
 
     Each invocation of this function allows for an iterable of paths to be sorted by a single criteria, specified by
@@ -36,7 +37,7 @@ def sort_paths(paths, sort, descending):
         paths = sorted(paths, key=lambda f: f.stat().st_size, reverse=descending)
     return paths
 
-def search(dir, regex=None, ext=None, sort=None, descending=True):
+def search(dir:Union[str,pathlib.Path], regex:str=None, ext:str=None, sort:str=None, descending:bool=True):
     """Walk through a directory tree and return a list of files matching a given criteria.
 
     Criteria can be file type and/or a regular expression to match. If no criteria is passed, then all files in the
